@@ -1,27 +1,24 @@
-import Student from './components/students';
-import { useState } from "react";
+  import { useState } from "react";
 
-function App() {
-    const [count, setCount] = useState(0);
+  function App() {
+    const [email, setEmail] = useState("");
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log("Submitted email:", email);
+    };
+
     return (
-        <div>
-            <Student name="John Doe" age={20} faculty="Engineering"/>
-            <h1>{count}</h1>
-
-            <button onClick={() => setCount(count + 1)}>
-            Increase
-            </button>
-
-            <button onClick={() => setCount(count - 1)}>
-            Decrease
-            </button>
-
-            <button onClick={() => setCount(0)}>
-            Reset
-            </button>
-        </div>
-        
+      <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <button type="submit">Login</button>
+      </form>
     );
-}
+  }
 
-export default App;
+  export default App;
+
