@@ -3,6 +3,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import './index.css'
+import './tailwind.css'
+import './styles.css'
+import Student from './components/students.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -115,6 +119,8 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
+
+      <Student name="John Doe" age={20} faculty="Engineering" course="Computer Science" />
     </>
   )
 }
